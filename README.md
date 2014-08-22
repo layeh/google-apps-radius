@@ -12,7 +12,7 @@ Installation can be done via [npm](https://www.npmjs.org/):
 
 ## Usage
 
-    Usage: google-apps-radius -p [port] -domain <domain> -secret <secret>
+    Usage: google-apps-radius --port [port] --domain <domain> --secret <secret>
 
     Options:
       --domain  [required]
