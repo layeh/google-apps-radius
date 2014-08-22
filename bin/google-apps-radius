@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+/*
+ * Copyright (C) 2014 Tim Cooper
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+var googleAppsRadius = require('../');
+
+var argv = require('optimist')
+  .usage('Usage: $0 -p [port] -domain <domain> -secret <secret>')
+  .demand(['domain', 'secret'])
+  .default('port', 1812)
+  .string('domain')
+  .string('secret')
+  .argv;
+
+var server = googleAppsRadius.createServer({
+  domain: argv.domain,
+  secret: argv.secret
+});
+
+server.on('listening', function () {
+  var pre = new Date().toISOString() + ': ';
+  var address = server.address();
+  console.log(pre + 'Listening ' + address.address + ':' + address.port);
+});
+
+server.on('radius', function (e) {
+  var pre = new Date().toISOString() + ': ';
+  var type = e.status ? 'success' : 'failure';
+  console.log(pre + 'Authentication ' + type + ': ' + e.username + '@' + e.domain);
+});
+
+server.bind(argv.port);
