@@ -4,6 +4,12 @@ This is a RADIUS server that authenticates against a Google Apps domain. The
 authentication is done using a headless browser
 as opposed to Google's deprecated [ClientLogin](https://developers.google.com/accounts/docs/AuthForInstalledApps).
 
+## Installing
+
+Installation can be done via [npm](https://www.npmjs.org/):
+
+    npm install -g google-apps-radius
+
 ## Usage
 
     Usage: google-apps-radius -p [port] -domain <domain> -secret <secret>
