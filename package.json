@@ -1,7 +1,7 @@
 {
   "name": "google-apps-radius",
   "description": "RADIUS server that authenticates against a Google Apps domain.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/layeh/google-apps-radius",
   "bugs": "https://github.com/layeh/google-apps-radius/issues",
   "license": "GPLv3",
