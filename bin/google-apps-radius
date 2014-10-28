@@ -31,16 +31,22 @@ var server = googleAppsRadius.createServer({
   secret: argv.secret
 });
 
+function now() {
+  return new Date().toISOString() + ': ';
+}
+
 server.on('listening', function () {
-  var pre = new Date().toISOString() + ': ';
   var address = server.address();
-  console.log(pre + 'Listening ' + address.address + ':' + address.port);
+  console.log(now() + 'Listening ' + address.address + ':' + address.port);
 });
 
 server.on('radius', function (e) {
-  var pre = new Date().toISOString() + ': ';
   var type = e.status ? 'success' : 'failure';
-  console.log(pre + 'Authentication ' + type + ': ' + e.username + '@' + e.domain);
+  console.log(now() + 'Authentication ' + type + ': ' + e.username + '@' + e.domain);
+});
+
+server.on('radius-error', function (err) {
+  console.log(now() + err);
 });
 
 server.bind(argv.port);
