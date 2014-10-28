@@ -18,7 +18,7 @@
 
 var googleAppsRadius = require('../');
 
-var argv = require('optimist')
+var argv = require('yargs')
   .usage('Usage: $0 --address <address> --port [port] --domain <domain> --secret <secret>')
   .demand(['domain', 'secret'])
   .default('port', 1812)

@@ -6,8 +6,8 @@
   "bugs": "https://github.com/layeh/google-apps-radius/issues",
   "license": "GPLv3",
   "dependencies": {
-    "optimist": "^0.6.1",
     "radius": "^1.0.3",
+    "yargs": "^1.3.2",
     "zombie": "^2.0.0-alpha31"
   },
   "bin": {
