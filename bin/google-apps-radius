@@ -19,9 +19,11 @@
 var googleAppsRadius = require('../');
 
 var argv = require('optimist')
-  .usage('Usage: $0 --port [port] --domain <domain> --secret <secret>')
+  .usage('Usage: $0 --address <address> --port [port] --domain <domain> --secret <secret>')
   .demand(['domain', 'secret'])
   .default('port', 1812)
+  .string('address')
+  .default('address', '0.0.0.0')
   .string('domain')
   .string('secret')
   .argv;
@@ -49,4 +51,4 @@ server.on('radius-error', function (err) {
   console.log(now() + err);
 });
 
-server.bind(argv.port);
+server.bind(argv.port, argv.address);
