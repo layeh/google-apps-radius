@@ -48,7 +48,7 @@ server.on('radius', function (e) {
 });
 
 server.on('radius-error', function (err) {
-  console.log(now() + err);
+  console.log(now() + err.message);
 });
 
 server.bind(argv.port, argv.address);
