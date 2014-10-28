@@ -12,12 +12,13 @@ Installation can be done via [npm](https://www.npmjs.org/):
 
 ## Usage
 
-    Usage: google-apps-radius --port [port] --domain <domain> --secret <secret>
+    Usage: google-apps-radius --address <address> --port [port] --domain <domain> --secret <secret>
 
     Options:
-      --domain  [required]
-      --secret  [required]
-      --port    [default: 1812]
+      --domain   [required]
+      --secret   [required]
+      --port     [default: 1812]
+      --address  [default: "0.0.0.0"]
 
 ## Known limitations
 
