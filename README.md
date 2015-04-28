@@ -1,8 +1,6 @@
 # google-apps-radius
 
-This is a RADIUS server that authenticates against a Google Apps domain. The
-authentication is done using a headless browser
-as opposed to Google's deprecated [ClientLogin](https://developers.google.com/accounts/docs/AuthForInstalledApps).
+This is a RADIUS server that authenticates against a Google Apps domain.
 
 ## Installing
 
