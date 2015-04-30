@@ -1,6 +1,6 @@
 # google-apps-radius
 
-This is a RADIUS server that authenticates against a Google Apps domain.
+This is a RADIUS server that authenticates against a Google Apps domain. It was developed for use with [pfSense](https://www.pfsense.org/)'s captive portal.
 
 ## Installing
 
